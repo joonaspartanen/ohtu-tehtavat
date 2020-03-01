@@ -5,6 +5,8 @@ import javafx.scene.control.TextField;
 
 public class Summa extends Komento {
 
+  private int edellinen;
+
   public Summa(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovellus) {
     super(tuloskentta, syotekentta, nollaa, undo, sovellus);
   }
@@ -18,8 +20,18 @@ public class Summa extends Komento {
     } catch (Exception e) {
     }
 
-    sovellus.plus(arvo);
+    edellinen = arvo;
 
+    sovellus.plus(arvo);
+    asetaKentat();
+  }
+
+  public void peru() {
+    sovellus.miinus(edellinen);
+    asetaKentat();
+  }
+
+  private void asetaKentat() {
     int laskunTulos = sovellus.tulos();
 
     syotekentta.setText("");
@@ -31,9 +43,5 @@ public class Summa extends Komento {
       nollaa.disableProperty().set(false);
     }
     undo.disableProperty().set(false);
-  }
-
-  public void peru() {
-    // TODO
   }
 };

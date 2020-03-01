@@ -5,6 +5,8 @@ import javafx.scene.control.TextField;
 
 public class Erotus extends Komento {
 
+  private int edellinen;
+
   public Erotus(TextField tuloskentta, TextField syotekentta, Button nollaa, Button undo, Sovelluslogiikka sovellus) {
     super(tuloskentta, syotekentta, nollaa, undo, sovellus);
   }
@@ -18,8 +20,19 @@ public class Erotus extends Komento {
     } catch (Exception e) {
     }
 
+    edellinen = arvo;
+
     sovellus.miinus(arvo);
 
+    asetaKentat();
+  }
+
+  public void peru() {
+    sovellus.plus(edellinen);
+    asetaKentat();
+  }
+
+  private void asetaKentat() {
     int laskunTulos = sovellus.tulos();
 
     syotekentta.setText("");
@@ -31,9 +44,5 @@ public class Erotus extends Komento {
       nollaa.disableProperty().set(false);
     }
     undo.disableProperty().set(false);
-  }
-
-  public void peru() {
-    // TODO
   }
 };
