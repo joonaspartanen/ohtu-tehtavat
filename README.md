@@ -15,3 +15,5 @@ Submission for the Helsinki University course Ohjelmistotuotanto 2020.
 - [Week 4, exercises 1–6](https://github.com/joonaspartanen/ohtu-tehtavat/tree/master/vk4)
 
 - [Week 5, exercises 1, 4–6](https://github.com/joonaspartanen/ohtu-tehtavat/tree/master/vk_5)
+
+- [Week 6, exercises 2–5](https://github.com/joonaspartanen/ohtu-tehtavat/tree/master/vk6/QueryLanguage)
